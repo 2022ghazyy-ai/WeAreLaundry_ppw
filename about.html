@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We are Laundry - Tentang Kami</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dark-mode { background-color: #121212; color: #ffffff; }
+        .dark-mode .navbar, .dark-mode footer, .dark-mode .card { background-color: #1f1f1f !important; color: white; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">We Are Laundry</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li><a class="nav-link" href="services.html">Layanan & Harga</a></li>
+                    <li><a class="nav-link" href="fasilitas.html">Fasilitas</a></li>
+                    <li><a class="nav-link" href="order.html">Pesan Antar</a></li>
+                    <li><a class="nav-link active text-primary" href="about.html">Tentang Kami</a></li>
+                </ul>
+                <button class="btn btn-sm btn-outline-secondary ms-3" id="themeToggle">🌙 Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="fw-bold text-center mb-3">Tentang Tim Kami</h2>
+
+       <p class="text-center mx-auto mb-5 about-text">
+    Selamat datang di We Are Laundry, solusi terpercaya untuk kebutuhan laundry Anda. 
+    Kami hadir dengan komitmen memberikan layanan pencucian pakaian yang bersih, cepat, dan berkualitas tinggi.
+    Dengan menggunakan peralatan modern, deterjen berkualitas, serta proses pencucian yang higienis, kami memastikan setiap pakaian mendapatkan perawatan terbaik. 
+    Tim kami bekerja dengan teliti mulai dari proses pencucian, pengeringan, penyetrikaan, hingga pengemasan agar pakaian kembali kepada pelanggan dalam kondisi bersih, rapi, dan nyaman digunakan.
+    Kepuasan pelanggan adalah prioritas utama kami. 
+    Oleh karena itu, kami selalu berupaya memberikan pelayanan yang ramah, hasil yang konsisten, serta waktu pengerjaan yang tepat. 
+    Baik untuk kebutuhan laundry harian, pakaian kerja, seragam, maupun kebutuhan khusus lainnya, We Are Laundry siap menjadi mitra terpercaya Anda.
+    Terima kasih telah mempercayakan perawatan pakaian Anda kepada We Are Laundry. 
+    Kami percaya bahwa pakaian yang bersih dan rapi dapat memberikan kenyamanan serta meningkatkan kepercayaan diri dalam menjalani aktivitas sehari-hari.
+    </p>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 text-center">
+                <div class="card p-4 shadow-sm border-0 bg-light">
+                    <h5 class="fw-bold mb-1">Anggota Kelompok 1</h5>
+                    <p class="text-primary mb-0">NAMA: YOGI KUKUH SETYO PAMBUDI</p>
+                    <p class="text-primary mb-0">NIM: 25.12.3634</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card p-4 shadow-sm border-0 bg-light">
+                    <h5 class="fw-bold mb-1">Anggota Kelompok 2</h5>
+                    <p class="text-primary mb-0">NAMA: MUHAMAD IQBAL</p>
+                    <p class="text-primary mb-0">NIM: 25.12.3635</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="card p-4 shadow-sm border-0 bg-light">
+                    <h5 class="fw-bold mb-1">Anggota Kelompok 3</h5>
+                    <p class="text-primary mb-0">NAMA: MUHAMAD GHAZY AMRULLAH</p>
+                    <p class="text-primary mb-0">NIM: 25.12.3614</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-4 mt-5 border-top">
+        <p class="mb-0">&copy; 2026 We Are Laundry.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>

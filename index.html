@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We are Laundry - Beranda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dark-mode { background-color: #121212; color: #ffffff; }
+        .dark-mode .navbar, .dark-mode footer, .dark-mode .card { background-color: #1f1f1f !important; color: white; }
+        .dark-mode .text-muted { color: #aaa !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">We Are Laundry</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item"><a class="nav-link active text-primary" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Layanan & Harga</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fasilitas.html">Fasilitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Pesan Antar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+                </ul>
+                <button class="btn btn-sm btn-outline-secondary ms-3" id="themeToggle">🌙 Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5 py-5 text-center">
+        <h1 class="display-4 fw-bold">Pakaian Kotor Menumpuk?<br><span class="text-primary">Kami Siap Bereskan!</span></h1>
+        <p class="lead text-muted my-4">Layanan laundry profesional, cepat, higienis, dan ramah di kantong.</p>
+        <a href="order.html" class="btn btn-primary btn-lg px-4 shadow">Pesan Antar-Jemput Sekarang</a>
+    </div>
+
+    <div class="container text-center my-5 py-3">
+    <h3 class="fw-bold mb-4">Lihat Proses Kebersihan Kami</h3>
+
+    <div class="d-flex justify-content-center">
+        <a href="https://www.youtube.com/watch?v=lRI3EWuCpAc"
+           target="_blank"
+           class="position-relative d-inline-block">
+
+            <img src="video.jpg"
+                 alt="Thumbnail Video Laundry"
+                 class="img-fluid rounded shadow"
+                 style="width: 500px; max-width: 100%;">
+
+            <div class="position-absolute top-50 start-50 translate-middle">
+                <svg width="120" height="85" viewBox="0 0 68 48">
+                    <path d="M66.52 7.74a8 8 0 0 0-5.64-5.66C55.88.67 34 .67 34 .67s-21.88 0-26.88 1.41A8 8 0 0 0 1.48 7.74 83.87 83.87 0 0 0 0 24a83.87 83.87 0 0 0 1.48 16.26 8 8 0 0 0 5.64 5.66c5 1.41 26.88 1.41 26.88 1.41s21.88 0 26.88-1.41a8 8 0 0 0 5.64-5.66A83.87 83.87 0 0 0 68 24a83.87 83.87 0 0 0-1.48-16.26z"
+                          fill="red"/>
+                    <path d="M45 24 27 14v20"
+                          fill="white"/>
+                </svg>
+            </div>
+
+        </a>
+    </div>
+</div>
+
+    <footer class="bg-light text-center py-4 mt-5 border-top">
+        <p class="mb-0">&copy; 2026 We Are Laundry.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️ Terang';
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if(document.body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️ Terang';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙 Gelap';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

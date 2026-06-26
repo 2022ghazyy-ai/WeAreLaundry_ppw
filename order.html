@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We are Laundry - Pesan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dark-mode { background-color: #121212; color: #ffffff; }
+        .dark-mode .navbar, .dark-mode footer, .dark-mode .card { background-color: #1f1f1f !important; color: white; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">We Are Laundry</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li><a class="nav-link" href="services.html">Layanan & Harga</a></li>
+                    <li><a class="nav-link" href="fasilitas.html">Fasilitas</a></li>
+                    <li><a class="nav-link active text-primary" href="order.html">Pesan Antar</a></li>
+                    <li><a class="nav-link" href="about.html">Tentang Kami</a></li>
+                </ul>
+                <button class="btn btn-sm btn-outline-secondary ms-3" id="themeToggle">🌙 Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="card p-4 shadow mx-auto" style="max-width: 600px;">
+            <h2 class="fw-bold text-center text-primary mb-4">Form Pemesanan</h2>
+            
+            <form id="orderForm" onsubmit="validasiForm(event)">
+                <div class="mb-3">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama Anda">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nomor WhatsApp</label>
+                    <input type="tel" class="form-control" id="whatsapp" placeholder="Contoh: 081234567811">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Alamat Penjemputan</label>
+                    <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat lengkap / Nama Kos & Kamar"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Kirim Order via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center py-4 mt-5 border-top">
+        <p class="mb-0">&copy; 2026 We Are Laundry.</p>
+    </footer>
+
+    <script>
+        function validasiForm(event) {
+            event.preventDefault(); 
+            
+            const nama = document.getElementById('nama').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const alamat = document.getElementById('alamat').value.trim();
+
+            if (nama === "" || whatsapp === "" || alamat === "") {
+                alert("❌ Gagal! Semua kolom wajib diisi agar kurir kami bisa menjemput.");
+            } else {
+                alert("✅ Sukses! Halo " + nama + ", pesanan Anda telah tersimpan. Kurir akan segera meluncur ke lokasi Anda.");
+                document.getElementById('orderForm').reset();
+            }
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        if (localStorage.getItem('theme') === 'dark') { document.body.classList.add('dark-mode'); }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
